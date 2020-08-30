@@ -10,7 +10,7 @@ const invalid1 = [4, 5, 3, 2, 7, 7, 8, 7, 7, 1, 0, 9, 1, 7, 9, 5];
 const invalid2 = [5, 7, 9, 5, 5, 9, 3, 3, 9, 2, 1, 3, 4, 6, 4, 3];
 const invalid3 = [3, 7, 5, 7, 9, 6, 0, 8, 4, 4, 5, 9, 9, 1, 4];
 const invalid4 = [6, 0, 1, 1, 1, 2, 7, 9, 6, 1, 7, 7, 7, 9, 3, 5];
-const invalid5 = [9, 3, 8, 2, 0, 1, 9, 7, 7, 2, 8, 8, 3, 8, 5, 4];
+const invalid5 = [5, 3, 8, 2, 0, 1, 9, 7, 7, 2, 8, 8, 3, 8, 5, 4];
 
 // Can be either valid or invalid
 const mystery1 = [3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4];
@@ -48,11 +48,11 @@ const result = [];
 //  console.log(result);
 
  const sumAll = (acc, curr) => acc + curr;
- const finalCut = result.reduce(sumAll, array.pop());
+ const totalSumOfArr = result.reduce(sumAll, array.pop());
 
 //  console.log(finalCut);
 
- if(finalCut % 10 === 0){
+ if(totalSumOfArr % 10 === 0){
    return true;
  } else{
    return false;
@@ -88,16 +88,13 @@ const idInvalidCardCompanies = invalidNums => {
     } else if(invalidNumsFirstIndex === 6){
       companyName.push('Discover');
     } else{
-      console.log('Company not found for Card Number:');
-      console.log(invalidNums[i]);
-      console.log('');
+      console.log('Company not found');
     }
   }
 
   const uniqueCompanyName = [...new Set(companyName)];
 
-  return 'Companies that issued faulty number: \n' + uniqueCompanyName;
-    
+  return uniqueCompanyName;
 }
 
 console.log(idInvalidCardCompanies(inValidCards));
